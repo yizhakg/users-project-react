@@ -1,0 +1,24 @@
+.btn {
+  display: block;
+  width: 100%;
+  height: 50px;
+  border-radius: 25px;
+  outline: none;
+  border: none;
+  background-image: linear-gradient(to right, var(--mainColor), var(--mainColorLower), var(--mainColor));
+  background-size: 200%;
+  font-size: 1.2rem;
+  color: #fff;
+  font-family: "Poppins", sans-serif;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: 0.5s;
+  margin: 20px 10px;
+}
+.btn.v2 {
+  background-image: linear-gradient(to right, grey, rgb(146, 146, 146), grey);
+  background-size: 200%;
+}
+.btn:hover {
+  background-position: right;
+}

@@ -1,0 +1,158 @@
+svg{
+  position: absolute;
+  bottom: 0;
+  z-index: -1;
+}
+
+.wave {
+  position: fixed;
+  bottom: 0;
+  left: 60px;
+  height: 100%;
+  width: 50vw;
+  z-index: -1;
+}
+.loginPage {
+  position: relative;
+  width: calc(100vw - 60px);
+  height: 100vh;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 7rem;
+  padding: 0 2rem;
+  margin-left: auto;
+}
+
+.loginPage .img {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.loginPage .img img {
+  width: 100%;
+}
+
+.loginPage .login-content {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  margin-top: 30px;
+  text-align: center;
+  height: 100%;
+}
+
+.loginPage form {
+  width: 350px;
+  position: relative;
+  margin: auto;
+}
+
+.loginPage .login-content img {
+  height: 100px;
+}
+.loginPage .login-content .loginSwitch {
+  display: flex;
+  justify-content: space-evenly;
+  margin: 25px 0;
+  color: var(--mainColorBlack);
+  text-transform: uppercase;
+  font-size: 2em;
+  font-weight: 700;
+}
+.loginSwitch .switch {
+  position: relative;
+  width: 50%;
+}
+.loginSwitch .switch::before,
+.loginSwitch .switch::after {
+  content: "";
+  position: absolute;
+  bottom: -2px;
+  width: 0%;
+  height: 2px;
+  background-color: var(--mainColor);
+  transition: 0.4s;
+}
+.loginSwitch .switch {
+  color: var(--mainColorGrey);
+  cursor: pointer;
+}
+.loginSwitch .switch.active {
+  color: var(--mainColorBlack);
+}
+.loginSwitch .switch:before {
+  right: 50%;
+}
+
+.loginSwitch .switch:after {
+  left: 50%;
+}
+.loginSwitch .switch.active:before,
+.loginSwitch .switch.active:after {
+  width: 50%;
+}
+.loginPage .login-content span {
+  display: block;
+  text-align: right;
+  text-decoration: none;
+  color: var(--mainColorGrey);
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.loginPage .login-content span:hover {
+  color: var(--mainColor);
+}
+
+.formButtons {
+  display: flex;
+}
+.error {
+  position: absolute;
+  transform: translateY(34px);
+  right: 0;
+  margin: 0;
+  padding: 0;
+  color: red;
+  font-size: .9em;
+  text-align: right;
+}
+.faildTry{
+  color: red;
+  font-size: .9em;
+  font-weight: 600;
+}
+@media screen and (max-width: 900px) {
+  .loginPage {
+    padding: 0;
+    grid-gap: 0;
+    grid-template-columns: 1fr;
+  }
+
+  .loginPage .img {
+    display: none;
+  }
+
+  .loginPage .login-content {
+    justify-content: center;
+  }
+  .loginPage .login-content .title {
+    font-size: 13vw;
+  }
+  .wave {
+    display: none;
+  }
+}
+@media screen and (max-width: 400px) {
+  .loginPage .login-content form {
+    width: 70vw;
+  }
+  .loginPage .login-content .btn {
+    margin: 10px;
+  }
+  .loginPage .login-content .loginSwitch {
+    font-size: 1.5em;
+  }
+}

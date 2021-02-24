@@ -1,0 +1,212 @@
+
+.navBar {
+  display: flex;
+  position: fixed;
+  top: 0;
+  width: fit-content;
+  height: 100%;
+  color: var(--mainColorBlack);
+  transition: 1s ease-in-out;
+  z-index: 10;
+}
+.navBar ul li a i {
+  color: var(--mainColorBlack);
+}
+/* ---------------- */
+.hoverBar {
+  height: 100%;
+  width: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+  background: #fff;
+  transition: 1s ease-in-out;
+}
+.hoverBar ul {
+  margin: 30px 30%;
+}
+.hoverBar ul li {
+  list-style: none;
+  width: 150px;
+}
+.hoverBar ul li a {
+  text-decoration: none;
+  color: var(--mainColorBlack);
+  font-weight: 600;
+  transition: 0.3s ease-in-out;
+}
+.hoverBar ul li:hover a i {
+  transition: 0.3s ease-in-out;
+}
+.hoverBar ul li:hover a,
+.hoverBar ul li:hover a i {
+  color: var(--mainColor);
+  text-shadow: 0 0 1px rgb(121, 121, 121);
+}
+/* --- */
+.hoverBar::before {
+  content: "";
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  background: var(--mainColor);
+  clip-path: circle(0% at 100% 0);
+  transition: 1s ease-in-out;
+}
+/* --- */
+.hoverBar .logo{
+  z-index: 10;
+}
+.hoverBar .logo li img {
+  height: 100%;
+  width: 100%;
+}
+/* --- */
+.hoverBar .menu {
+  font-size: 2em;
+}
+/* --- */
+.hoverBar .social {
+  display: flex;
+}
+.hoverBar .social li {
+  height: 30px;
+  width: 30px;
+  text-align: center;
+  line-height: 30px;
+}
+.hoverBar .social li a {
+  display: block;
+  height: 100%;
+  width: 100%;
+}
+/* --------------- */
+.mainBar {
+  height: 100%;
+  width: 60px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  background: #fff;
+  position: relative;
+  transition: 0.9s ease-in-out;
+  overflow: hidden;
+}
+.mainBar ul {
+  margin: 20px;
+  width: 100%;
+  text-align: center;
+}
+.mainBar ul li {
+  position: relative;
+  height: 30px;
+  width: 100%;
+  line-height: 30px;
+  list-style: none;
+}
+.mainBar ul li a {
+  display: block;
+  height: 100%;
+  width: 100%;
+  text-decoration: none;
+}
+.mainBar .logo img {
+  height: 100%;
+  width: 100%;
+}
+.toggle {
+  position: relative;
+  top: 10%;
+}
+.toggle .close{
+display: none;
+}
+.toggle.active .close{
+display: block;
+}
+.toggle.active .open{
+display: none;
+}
+
+.mainBar .social {
+  position: relative;
+}
+.mainBar .social li {
+  position: relative;
+  animation: animate 8s linear infinite;
+}
+@keyframes animate {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  25% {
+    transform: translateY(380px);
+  }
+  50% {
+    transform: translateY(380px);
+  }
+  75% {
+    transform: translateY(0);
+  }
+}
+.mainBar .social::before {
+  content: "Yizhak Gete Site Design";
+  position: absolute;
+  transform: rotate(-90deg);
+  bottom: 60%;
+  left: -93px;
+  text-align: left;
+  height: 55px;
+  width: 250px;
+  letter-spacing: 10px;
+  animation: animate2 8s linear infinite;
+}
+@keyframes animate2 {
+  0%,
+  100% {
+    transform: rotate(-90deg) translateX(-380px);
+  }
+  25% {
+    transform: rotate(-90deg) translateX(0);
+  }
+  50% {
+    transform: rotate(-90deg) translateX(0);
+  }
+  75% {
+    transform: rotate(-90deg) translateX(-380px);
+  }
+}
+
+@media screen and (min-width: 800px) {
+  .navBar:hover .mainBar {
+    width: 0;
+  }
+  .navBar:hover .hoverBar {
+    width: 50vw;
+  }
+  .hoverBar:hover::before {
+    clip-path: circle(50% at 100% 0);
+  }
+}
+@media screen and (max-width: 800px) {
+  .mainBar.active{
+    width: 40px;
+  }
+  .mainBar .social::before {
+    font-size: .6em;
+  }
+  .hoverBar ul {
+    margin: 30px 20vw;
+  }
+  .hoverBar.active{
+    width: calc(100vw - 40px);
+  }
+  .hoverBar.active::before {
+    clip-path: circle(50% at 100% 0);
+  }
+}
