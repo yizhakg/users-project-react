@@ -1,4 +1,4 @@
-svg{
+svg {
   position: absolute;
   bottom: 0;
   z-index: -1;
@@ -45,7 +45,6 @@ svg{
 .loginPage form {
   width: 350px;
   position: relative;
-  margin: auto;
 }
 
 .loginPage .login-content img {
@@ -116,12 +115,12 @@ svg{
   margin: 0;
   padding: 0;
   color: red;
-  font-size: .9em;
+  font-size: 0.9em;
   text-align: right;
 }
-.faildTry{
+.faildTry {
   color: red;
-  font-size: .9em;
+  font-size: 0.9em;
   font-weight: 600;
 }
 @media screen and (max-width: 900px) {
@@ -141,13 +140,17 @@ svg{
   .loginPage .login-content .title {
     font-size: 13vw;
   }
+  .loginPage form {
+    margin: auto;
+  }
   .wave {
     display: none;
   }
 }
-@media screen and (max-width: 400px) {
+@media screen and (max-width: 500px) {
   .loginPage .login-content form {
     width: 70vw;
+    transform: scale(.8);
   }
   .loginPage .login-content .btn {
     margin: 10px;
