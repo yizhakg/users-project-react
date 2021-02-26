@@ -37,7 +37,7 @@ svg {
   display: flex;
   justify-content: center;
   align-items: flex-start;
-  margin-top: 30px;
+  margin-top: 15px;
   text-align: center;
   height: 100%;
 }
@@ -139,9 +139,6 @@ svg {
   }
   .loginPage .login-content .title {
     font-size: 13vw;
-  }
-  .loginPage form {
-    margin: auto;
   }
   .wave {
     display: none;

@@ -20,10 +20,10 @@ export default function Login(props) {
     if (loginStatus) {
       const userData = JSON.parse(window.localStorage.getItem("userData"));
       if (userData) {
-        if (userData.userName == userName.current && userData.password == password.current) {
+        if (userData.userName.toLowerCase() == userName.current.toLowerCase() && userData.password == password.current) {
           console.log("userData Pass");
           history.push('/usersList')
-        }else{
+        } else {
           setLoginTempt(true)
         }
       } else {
@@ -31,6 +31,7 @@ export default function Login(props) {
       }
     } else {
       window.localStorage.clear();
+      props.setLoginName(data.userName)
       window.localStorage.setItem("userData", JSON.stringify(data));
       console.log("Sign Up Successfully");
       loginSwitchClass(true);
@@ -79,7 +80,7 @@ export default function Login(props) {
               minLength: { value: 8, message: "Password Too Short" },
               validate: value => value == password.current || "The passwords do not match"
             })} />}
-            {loginTry&&<p className="faildTry">Wrong user name or password<br/> Try again or sign up</p>}
+            {loginTry && <p className="faildTry">Wrong user name or password<br /> Try again or sign up</p>}
             {loginStatus && <span href="#">Forgot Password?</span>}
             <div className="formButtons">
               <DesignButton type="submit" className="btn" text={loginStatus ? "Login" : "Sign Up"} />

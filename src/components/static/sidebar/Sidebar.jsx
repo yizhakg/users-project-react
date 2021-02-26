@@ -2,8 +2,9 @@ import React from 'react'
 import './Sidebar.css'
 import { Link } from 'react-router-dom';
 
-export default function SideBar() {
+export default function SideBar(props) {
   function toggleMenu() {
+    if (window.innerWidth > 800) return;
     let toggle = document.querySelector('.toggle');
     let hoverBar = document.querySelector('.hoverBar');
     let mainBar = document.querySelector('.mainBar');
@@ -24,15 +25,18 @@ export default function SideBar() {
   return (
     <nav className="navBar">
       <div className="hoverBar">
-        <ul className="logo">
-          <li> <img src="./img/login/avatarBlue.svg" /></li>
-        </ul>
+        <div className="logo">
+          <img src="./img/login/avatarBlue.svg" />
+        </div>
+        <h3 className="hoverBarTitle">{props.loginName}</h3>
         <ul className="menu">
+          <li><Link to="/">Home</Link></li>
           <li><Link to="/usersList">Users</Link></li>
           <li><Link to="/" onClick={() => {
             window.localStorage.clear();
+            props.setLoginName("Guest")
             toggleMenu();
-            }}>Logout</Link></li>
+          }}>Logout</Link></li>
         </ul>
         <ul className="social">
           <li><a href="#"><i className="fab fa-twitter" aria-hidden="true"></i></a></li>

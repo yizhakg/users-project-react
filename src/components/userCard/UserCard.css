@@ -1,0 +1,27 @@
+.userCard {
+  height: 300px;
+  width: 200px;
+  backdrop-filter: blur(10px);
+  border-radius: 3px;
+  margin: 20px;
+  color:var(--mainColorBlack);
+  text-align: center;
+  background:rgba(255, 255, 255, 0.507);
+  box-shadow: 0px 3px 6px rgb(0 0 0 / 16%), 0px 3px 6px rgb(0 0 0 / 23%);
+  transition: .5s;
+  cursor: pointer;
+}
+.userCard:hover{
+  transform: scale(1.05);
+}
+.userCard h2{
+transition: .5s;
+}
+.userCard:hover h2{
+  color:#111;
+  letter-spacing: .8px;
+}
+.userCard img{
+  height: 100px;
+  width: 100px;
+}
