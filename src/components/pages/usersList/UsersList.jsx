@@ -1,26 +1,21 @@
-import React, { useState, useEffect } from 'react'
+import React from 'react'
 import './UsersList.css'
 import UserCard from '../../userCard/UserCard'
-import getApiUsers from '../../../services/service.users'
 import { Link } from 'react-router-dom'
-export default function UsersList(props) {
-  const [usersData, setUsersData] = useState([])
-  const fetchData = async () => {
-    const result = await getApiUsers();
-    setUsersData(result);
-  };
-  useEffect(() => {
-    fetchData();
-  }, []);
+
+export default function UsersList({loginName,USERS}) {
 
   return (
     <React.Fragment>
-      {props.loginName != 'Guest' ? <div className="userListDiv">
-        <h1>Users</h1>
-        <div className="users">
-          {usersData.map((user) => <UserCard user={user} />)}
+      {loginName != 'Guest' ?
+        <div className="userListDiv">
+          <div className="title"><h1>Users</h1></div>
+          <div className="users">
+            {USERS.map((user) => <UserCard user={user} />)}
+          </div>
         </div>
-      </div> : <div className="signInErr">
+        :
+        <div className="signInErr">
           <Link to='/'>Please Sign In</Link>
         </div>}
     </React.Fragment>

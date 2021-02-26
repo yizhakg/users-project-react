@@ -26,7 +26,7 @@ export default function SideBar(props) {
     <nav className="navBar">
       <div className="hoverBar">
         <div className="logo">
-          <img src="./img/login/avatarBlue.svg" />
+           <img src="./img/login/avatarBlue.svg" />
         </div>
         <h3 className="hoverBarTitle">{props.loginName}</h3>
         <ul className="menu">

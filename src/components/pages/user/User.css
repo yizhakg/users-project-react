@@ -1,7 +1,42 @@
 .userDiv{
   height: 100vh;
+  width: calc(100vw - 60px);
+  margin-left: auto;
+  overflow: scroll;
+}
+.userDiv .title {
   width: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  position: sticky;
+  top: 0;
+  z-index: 1;
+  background: white;
+  padding-top: 10px;
+}
+.userDiv .title h1{
+  border-bottom:2px solid var(--mainColor);
+  width: fit-content;
+  padding: 0 20px;
+  margin: auto;
+}
+.userInfo{
+  margin: 10px;
+}
+.userDiv .userInfo h3 {
+font-weight: 500;
+}
+.userDiv .userInfo h3 u {
+font-size: 1.2em;
+font-weight: 600;
+}
+.userDiv .userInfo h3 p {
+font-size: .9em;
+font-weight: 500;
+width: 70%;
+text-align: justify;
+}
+.userInfo .greeting{
+  text-align: center;
+  width: fit-content;
+  margin: 20px auto;
+  border-top:2px solid var(--mainColor);
 }

@@ -9,14 +9,21 @@
   background-position: center;
   background-size: 30%;
 }
-.userListDiv h1 {
+.userListDiv .title {
   width: 100%;
   position: sticky;
   top: 0;
   z-index: 1;
   background: white;
-  padding: 10px;
+  padding-top: 10px;
 }
+.userListDiv .title h1{
+  border-bottom:2px solid var(--mainColor);
+  width: fit-content;
+  padding: 0 20px;
+  margin: auto;
+}
+
 .users {
   width: 100%;
   display: flex;

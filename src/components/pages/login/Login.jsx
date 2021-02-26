@@ -10,7 +10,7 @@ export default function Login(props) {
   const [loginTry, setLoginTempt] = useState(false)
   const history = useHistory();
 
-  const { register, handleSubmit, watch, errors } = useForm();
+  const { register, handleSubmit, watch, errors, reset } = useForm();
   const userName = useRef({});
   userName.current = watch("userName");
   const password = useRef({});
@@ -38,7 +38,10 @@ export default function Login(props) {
       window.location.reload();
     }
   }
-
+  const onReset = () => {
+    reset();
+    setLoginTempt(false);
+  }
   const loginSwitchClass = (bool) => {
     setLoginStatus(bool);
     const loginClass = document.querySelectorAll(".switch");
@@ -54,6 +57,7 @@ export default function Login(props) {
 
   useEffect(() => {
     loginSwitchClass(true);
+    document.querySelector('.btn.v2').addEventListener('click', () => onReset())
   }, [])
 
   return (
@@ -73,7 +77,7 @@ export default function Login(props) {
             {errors.userName && <p className="error">{errors.userName.message}</p>}
             <DesignInput title="User Name" type="text" name="userName" icon="user" className={"input"} inputRef={register({ required: "User Name Require", })} />
             {errors.password && <p className="error">{errors.password.message}</p>}
-            <DesignInput title="Password" name="password" type="password" icon="lock" className={"input"} inputRef={register({ required: "Password Required", minLength: { value: 8, message: "Password Too Short" } })} />
+            <DesignInput title="Password" name="password" type="password" icon="lock" className={"input"} inputRef={register({ required: "Password Required", minLength: { value: loginStatus || 8, message: "Password Too Short" } })} />
             {loginStatus || errors.passwordConfirm && <p className="error">{errors.passwordConfirm.message}</p>}
             {loginStatus || <DesignInput name="passwordConfirm" title="Password Confirm" type="password" icon="unlock" className="input" inputRef={register({
               required: "Password Confirm Require",
@@ -84,7 +88,7 @@ export default function Login(props) {
             {loginStatus && <span href="#">Forgot Password?</span>}
             <div className="formButtons">
               <DesignButton type="submit" className="btn" text={loginStatus ? "Login" : "Sign Up"} />
-              <DesignButton type="reset" className="btn v2" text="Reset" />
+              <DesignButton type="button" className="btn v2" text="Reset" />
             </div>
             {loginStatus && <span href="#" style={{ textAlign: "center" }} onClick={() => { loginSwitchClass(false) }}>Create A New Account</span>}
           </form>
