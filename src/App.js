@@ -22,7 +22,7 @@ function App() {
             <Login setLoginName={setLoginName}/>
           </Route>
           <Route exact path="/usersList">
-            <UsersList/>
+            <UsersList loginName={loginName}/>
           </Route>
           <Route exact path="/user">
             <User />
