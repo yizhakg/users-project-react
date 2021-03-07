@@ -2,9 +2,9 @@ import React from 'react'
 import './Sidebar.css'
 import { Link } from 'react-router-dom';
 
-export default function SideBar(props) {
+export default function SideBar({ loginName, setLoginStatus, setLoginName, isLogin }) {
   function toggleMenu() {
-    if (window.innerWidth > 800) return;
+    if (window.innerWidth > 600) return;
     let toggle = document.querySelector('.toggle');
     let hoverBar = document.querySelector('.hoverBar');
     let mainBar = document.querySelector('.mainBar');
@@ -26,17 +26,19 @@ export default function SideBar(props) {
     <nav className="navBar">
       <div className="hoverBar">
         <div className="logo">
-           <img src="./img/login/avatarBlue.svg" />
+          <img src="/img/login/avatarBlue.svg" />
         </div>
-        <h3 className="hoverBarTitle">{props.loginName}</h3>
+        <h3 className="hoverBarTitle">{loginName}</h3>
         <ul className="menu">
-          <li><Link to="/">Home</Link></li>
-          <li><Link to="/usersList">Users</Link></li>
+          <li><Link to="/" onClick={toggleMenu}>Home</Link></li>
+          <li><Link to="/usersList" onClick={toggleMenu}>Users</Link></li>
           <li><Link to="/" onClick={() => {
-            window.localStorage.clear();
-            props.setLoginName("Guest")
             toggleMenu();
-          }}>Logout</Link></li>
+            if (isLogin) {
+              setLoginStatus(false)
+              setLoginName("Guest");
+            }
+          }}>{isLogin ? 'Logout' : 'Login'}</Link></li>
         </ul>
         <ul className="social">
           <li><a href="#"><i className="fab fa-twitter" aria-hidden="true"></i></a></li>
@@ -48,7 +50,7 @@ export default function SideBar(props) {
       </div>
       <div className="mainBar">
         <ul className="logo">
-          <li><img src="./img/login/avatarBlue.svg" /></li>
+          <li><img src="/img/login/avatarBlue.svg" /></li>
         </ul>
         <div className="toggle" onClick={toggleMenu}>
           <div className="open"><i class="fas fa-bars"></i></div>

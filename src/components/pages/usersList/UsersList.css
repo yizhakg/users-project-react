@@ -1,6 +1,7 @@
 .userListDiv {
-  height: 100vh;
+  height: calc(100vh - 40px);
   width: calc(100vw - 60px);
+  margin-top: auto;
   margin-left: auto;
   text-align: center;
   overflow: scroll;

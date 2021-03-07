@@ -1,0 +1,29 @@
+.userPictureDiv {
+  position: relative;
+  height: 90%;
+  width: 90%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+  /* background: var(--mainColor); */
+}
+
+.userPictureDiv img {
+  height: 200px;
+  width: 200px;
+ border-radius:  50%;
+}
+
+@media screen and (max-width: 700px) {
+  .userPictureDiv {
+    height: 30%;
+    width: 30%;
+    margin: 10px auto;
+  }
+  .userPictureDiv img{
+    height: 100px;
+    width: 100px;
+    margin: auto;
+  }
+}

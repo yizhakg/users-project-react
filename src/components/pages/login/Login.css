@@ -14,8 +14,9 @@ svg {
 }
 .loginPage {
   position: relative;
+  height: calc(100vh - 40px);
   width: calc(100vw - 60px);
-  height: 100vh;
+  margin-top: auto;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   grid-gap: 7rem;
@@ -40,6 +41,7 @@ svg {
   margin-top: 15px;
   text-align: center;
   height: 100%;
+  width: 100%;
 }
 
 .loginPage form {
@@ -128,6 +130,7 @@ svg {
     padding: 0;
     grid-gap: 0;
     grid-template-columns: 1fr;
+    overflow-y: scroll;
   }
 
   .loginPage .img {
@@ -135,19 +138,25 @@ svg {
   }
 
   .loginPage .login-content {
-    justify-content: center;
+    margin: 0;
   }
-  .loginPage .login-content .title {
-    font-size: 13vw;
+  .loginPage .login-content form {
+    margin-top: 8%;
   }
   .wave {
     display: none;
   }
 }
 @media screen and (max-width: 500px) {
+
   .loginPage .login-content form {
-    width: 70vw;
-    transform: scale(.8);
+   width: 90%;
+  }
+  .loginPage form >div {
+    width: 90%;
+   }
+  .loginPage .login-content form .formButtons {
+    flex-direction: column;
   }
   .loginPage .login-content .btn {
     margin: 10px;

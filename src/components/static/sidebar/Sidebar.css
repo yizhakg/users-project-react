@@ -167,7 +167,8 @@ display: none;
   }
 }
 .mainBar .social::before {
-  content: "Yizhak Gete Site Design";
+  content: "Yizhak Gete \A Site Design";
+  white-space: pre-wrap;
   position: absolute;
   transform: rotate(-90deg);
   bottom: 60%;
@@ -194,7 +195,7 @@ display: none;
   }
 }
 
-@media screen and (min-width: 800px) {
+@media screen and (min-width: 600px) {
   .navBar:hover .mainBar {
     width: 0;
   }
@@ -205,7 +206,7 @@ display: none;
     clip-path: circle(50% at 100% 0);
   }
 }
-@media screen and (max-width: 800px) {
+@media screen and (max-width: 600px) {
   .mainBar.active{
     width: 40px;
   }
@@ -221,8 +222,9 @@ display: none;
   .hoverBar .hoverBarTitle{
     font-size: 10vw;
   }
-}
-@media screen and (max-width: 500px) {
+  .toggle{
+    cursor: pointer;
+  }
   .hoverBar .hoverBarTitle{
     font-size: 15vw;
   }

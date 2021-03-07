@@ -3,11 +3,10 @@ import './UsersList.css'
 import UserCard from '../../userCard/UserCard'
 import { Link } from 'react-router-dom'
 
-export default function UsersList({loginName,USERS}) {
-
+export default function UsersList({  USERS, isLogin }) {
   return (
     <React.Fragment>
-      {loginName != 'Guest' ?
+      {isLogin ?
         <div className="userListDiv">
           <div className="title"><h1>Users</h1></div>
           <div className="users">
