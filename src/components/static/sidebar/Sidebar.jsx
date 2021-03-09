@@ -40,12 +40,12 @@ export default function SideBar({ loginName, setLoginStatus, setLoginName, isLog
             }
           }}>{isLogin ? 'Logout' : 'Login'}</Link></li>
         </ul>
+      
         <ul className="social">
-          <li><a href="#"><i className="fab fa-twitter" aria-hidden="true"></i></a></li>
-          <li><a href="#"><i className="fab fa-facebook" aria-hidden="true"></i></a></li>
-          <li><a href="#"><i className="fab fa-instagram" aria-hidden="true"></i></a></li>
-          <li><a href="#"><i className="fab fa-linkedin" aria-hidden="true"></i></a></li>
-          <li><a href="#"><i className="fab fa-github" aria-hidden="true"></i></a></li>
+          <li><a href="https://twitter.com/yizhak_gete"><i className="fab fa-twitter" aria-hidden="true"></i></a></li>
+          <li><a href="https://www.facebook.com/yizhakg"><i className="fab fa-facebook" aria-hidden="true"></i></a></li>
+          <li><a href="https://www.linkedin.com/in/yizhak-gete/"><i className="fab fa-linkedin" aria-hidden="true"></i></a></li>
+          <li><a href="https://github.com/yizhakg"><i className="fab fa-github" aria-hidden="true"></i></a></li>
         </ul>
       </div>
       <div className="mainBar">
@@ -57,11 +57,10 @@ export default function SideBar({ loginName, setLoginStatus, setLoginName, isLog
           <div className="close"><i class="fas fa-times"></i></div>
         </div>
         <ul className="social">
-          <li><a href="#"><i className="fab fa-twitter" aria-hidden="true"></i></a></li>
-          <li><a href="#"><i className="fab fa-facebook" aria-hidden="true"></i></a></li>
-          <li><a href="#"><i className="fab fa-instagram" aria-hidden="true"></i></a></li>
-          <li><a href="#"><i className="fab fa-linkedin" aria-hidden="true"></i></a></li>
-          <li><a href="#"><i className="fab fa-github" aria-hidden="true"></i></a></li>
+          <li><a href="https://twitter.com/yizhak_gete"><i className="fab fa-twitter" aria-hidden="true"></i></a></li>
+          <li><a href="https://www.facebook.com/yizhakg"><i className="fab fa-facebook" aria-hidden="true"></i></a></li>
+          <li><a href="https://www.linkedin.com/in/yizhak-gete/"><i className="fab fa-linkedin" aria-hidden="true"></i></a></li>
+          <li><a href="https://github.com/yizhakg"><i className="fab fa-github" aria-hidden="true"></i></a></li>
         </ul>
       </div>
     </nav >

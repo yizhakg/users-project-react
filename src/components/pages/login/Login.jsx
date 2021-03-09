@@ -85,7 +85,7 @@ export default function Login({setLoginName,setLoginStatus,isLogin}) {
               minLength: { value: 8, message: "Password Too Short" },
               validate: value => value == password.current || "The passwords do not match"
             })} />}
-            {loginTry && <p className="faildTry">Wrong user name or password<br /> Try again or sign up</p>}
+            {loginTry && <p className="faildTry">Login info are incorrect<br/> Please try again</p>}
             {loginSwitch && <span href="#">Forgot Password?</span>}
             <div className="formButtons">
               <DesignButton type="submit" className="btn" text={loginSwitch ? "Login" : "Sign Up"} />
